@@ -52,20 +52,20 @@ signal.signal(signal.SIGINT, signal_handler)
 def check_answer(expected):
 	while True:
 		if sensor.touch_status_changed():
-      sensor.update_touch_data()
-			if sensor.is_new_touch(expected):
-        if expected !=99:
-					print ("Correct")
-					state = True
-					return state
-				  break
+      		sensor.update_touch_data()
+		if sensor.is_new_touch(expected):
+        		if expected !=99:
+				print ("Correct")
+				state = True
+				return state
+				break
 			
-			else:
-				if expected !=99:
-					print ("Incorrect")
-					state = False
-					return state
-				  break	
+		else:
+			if expected !=99:
+				print ("Incorrect")
+				state = False
+				return state
+				break	
 score = 0
 
 print ("To check if everything is working press the start button")
